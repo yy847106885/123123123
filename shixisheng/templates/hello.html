@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="//tinymce.cachefly.net/4.1/tinymce.min.js"></script>
+<script>tinymce.init({selector:'textarea'});</script>
+</head>
+<body>
+	
+
+
+
+<h1>hehe</h1>
+<h1>{{aaaaa}}</h1>
+<h1>{{date}}</h1>
+<img src="/static/3.jpg"/>
+{%for a in all%}
+</p>
+{{a.id}}|{{a.name}}|{{a.address}}|{{a.date}}|{{a.count}}
+<div> {{a.content|safe}}</div>
+{%endfor%}
+
+{%for a in all_img%}
+<img src="/media/{{a.img}}"/>
+{%endfor%}
+
+<form action="/new" method="POST">
+	{%csrf_token%}
+	<input type="text" name="name" />
+	<input type="text" name="address" />
+	<textarea name="content"></textarea>
+	<button>send</button>
+
+</form >
+</body>
+</html>
